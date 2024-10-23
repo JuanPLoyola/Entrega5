@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SuperAdmin"
+        tools:targetApi="31">
+
+
+        <activity
+            android:name=".super_register_admin_rest"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".super_gestion_usuarios"
+            android:exported="false"
+            android:label="@string/title_activity_super_gestion_usuarios"
+            android:theme="@style/Theme.SuperAdmin.NoActionBar" />
+
+        <activity
+            android:name=".super_habilitar_usuarios"
+            android:exported="false" />
+        <activity
+            android:name=".super_rest"
+            android:exported="false" />
+        <activity
+            android:name=".super_editar"
+            android:exported="false" />
+        <activity
+            android:name=".super_estadisticas_por_rest"
+            android:exported="true" />
+        <activity
+            android:name=".super_estadisticas_general"
+            android:exported="false"/>
+
+        <!-- esta declarado pero ni idea que hace -->
+        <activity android:name=".SuperPrincipalActivity" />
+
+
+
+
+        <activity
+            android:name=".splashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+
+
+
+
+        <activity
+            android:name=".SummaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordRecoveryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordCodeActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PutPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomePedidosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CategoriesFragment"
+            android:exported="false" />
+        <activity
+            android:name=".UserDesplegableActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
