@@ -41,6 +41,7 @@ public class ProductHistorialAdapter extends RecyclerView.Adapter<ProductHistori
 
         holder.textModel.setText(product.getName());
         holder.imgProduct.setImageResource(product.getImageResId());
+        holder.textAmount.setText(String.valueOf(product.getPrice()));
 
 
     }
@@ -62,6 +63,7 @@ public class ProductHistorialAdapter extends RecyclerView.Adapter<ProductHistori
 
             textModel = itemView.findViewById(R.id.text_model);
             imgProduct = itemView.findViewById(R.id.img_product);
+            textAmount = itemView.findViewById(R.id.text_amount);
         }
     }
 

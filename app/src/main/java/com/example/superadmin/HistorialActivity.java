@@ -49,16 +49,16 @@ public class HistorialActivity extends AppCompatActivity implements ProductHisto
 
         RecyclerView recyclerView = findViewById(R.id.rv_historial);
         List<ProductInCar> products = Arrays.asList(
-                new ProductInCar("Restaurante 1",0, 45.0,R.drawable.comida),
-                new ProductInCar("Restaurante 2", 3, 650.0,R.drawable.logo),
-                new ProductInCar("Restaurante 3", 1, 350.0,R.drawable.logo),
-                new ProductInCar("Restaurante 4", 2, 800.0,R.drawable.logo),
-                new ProductInCar("asd", 4, 550.0,R.drawable.logo),
-                new ProductInCar("ghjhgj", 1, 450.0,R.drawable.logo),
-                new ProductInCar("werwerggg", 1, 650.0,R.drawable.logo),
-                new ProductInCar("Leche de Tigre", 3, 350.0,R.drawable.logo),
-                new ProductInCar("Mazamorra de Calabaza", 6, 800.0,R.drawable.logo),
-                new ProductInCar("Tallarines Rojos", 1, 550.0,R.drawable.logo)
+                new ProductInCar("Restaurante 1",0, 45.50,R.drawable.comida),
+                new ProductInCar("Restaurante 2", 3, 50.11,R.drawable.logo),
+                new ProductInCar("Restaurante 3", 1, 30.25,R.drawable.logo),
+                new ProductInCar("Restaurante 4", 2, 80.14,R.drawable.logo),
+                new ProductInCar("asd", 4, 55.0,R.drawable.logo),
+                new ProductInCar("ghjhgj", 1, 150.44,R.drawable.logo),
+                new ProductInCar("werwerggg", 1, 200.18,R.drawable.logo),
+                new ProductInCar("Leche de Tigre", 3, 350.54,R.drawable.logo),
+                new ProductInCar("Mazamorra de Calabaza", 6, 100.85,R.drawable.logo),
+                new ProductInCar("Tallarines Rojos", 1, 57.48,R.drawable.logo)
         );
         ProductHistorialAdapter adapter = new ProductHistorialAdapter(HistorialActivity.this, products,  this);
         recyclerView.setAdapter(adapter);
