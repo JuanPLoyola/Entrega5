@@ -49,13 +49,13 @@ public class HistorialActivity extends AppCompatActivity implements ProductHisto
 
         RecyclerView recyclerView = findViewById(R.id.rv_historial);
         List<ProductInCar> products = Arrays.asList(
-                new ProductInCar("Alitas BBQ",0, 45.0,R.drawable.comida),
-                new ProductInCar("Ceviche Mixto", 3, 650.0,R.drawable.logo),
-                new ProductInCar("Chicharrón de Calamar", 1, 350.0,R.drawable.logo),
-                new ProductInCar("Arroz con Mariscos", 2, 800.0,R.drawable.logo),
-                new ProductInCar("Ají de Gallina", 4, 550.0,R.drawable.logo),
-                new ProductInCar("Causa Limeña", 1, 450.0,R.drawable.logo),
-                new ProductInCar("Tacos de Pollo Crocante", 1, 650.0,R.drawable.logo),
+                new ProductInCar("Restaurante 1",0, 45.0,R.drawable.comida),
+                new ProductInCar("Restaurante 2", 3, 650.0,R.drawable.logo),
+                new ProductInCar("Restaurante 3", 1, 350.0,R.drawable.logo),
+                new ProductInCar("Restaurante 4", 2, 800.0,R.drawable.logo),
+                new ProductInCar("asd", 4, 550.0,R.drawable.logo),
+                new ProductInCar("ghjhgj", 1, 450.0,R.drawable.logo),
+                new ProductInCar("werwerggg", 1, 650.0,R.drawable.logo),
                 new ProductInCar("Leche de Tigre", 3, 350.0,R.drawable.logo),
                 new ProductInCar("Mazamorra de Calabaza", 6, 800.0,R.drawable.logo),
                 new ProductInCar("Tallarines Rojos", 1, 550.0,R.drawable.logo)

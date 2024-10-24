@@ -31,16 +31,34 @@
             android:fontFamily="@font/raleway_bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="¡Listo!"
+            android:text="Estamos a un paso"
             android:textColor="@color/black"
             android:textSize="28sp" />
 
-        <TextView
-            android:id="@+id/text_summary"
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <Spinner
+            android:id="@+id/spinner_direcciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Este es el resumen de tu pedido" />
+            android:entries="@array/direcciones_array" />
+
+        <!-- EditText para dirección manual (inicialmente oculto) -->
+        <EditText
+            android:id="@+id/edittext_direccion_manual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ingresa tu dirección manualmente"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -62,10 +80,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/red_app"
+            android:backgroundTint="@color/red_boton"
             android:insetTop="0dp"
             android:insetBottom="0dp"
-            android:text="Regresar al inicio"
+            android:text="Pagar"
             android:textColor="@color/white"
             android:textSize="12sp"
             app:cornerRadius="8dp" />
@@ -108,6 +126,7 @@
                     android:layout_marginBottom="17dp"
                     android:orientation="horizontal">
 
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -115,11 +134,12 @@
                         android:orientation="horizontal">
 
 
+
                         <TextView
                             android:fontFamily="@font/roboto_black"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="#"
+                            android:text="Numero de pedido #"
                             android:textColor="@color/blue_dark_app"
                             android:textSize="15sp" />
 
@@ -213,20 +233,6 @@
                         android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_black"
-                            android:textColor="@color/black"
-                            android:text="+IVA $" />
-
-                        <TextView
-                            android:id="@+id/text_iva"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_black"
-                            android:textColor="@color/black"
-                            android:text="2.0" />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/container_adjustment"
@@ -235,20 +241,6 @@
                         android:layout_marginBottom="4dp"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_black"
-                            android:textColor="@color/black"
-                            android:text="+Ajuste $" />
-
-                        <TextView
-                            android:id="@+id/text_adjustment"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_black"
-                            android:textColor="@color/black"
-                            android:text="1.0" />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/container_shipping"
@@ -262,7 +254,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_black"
                             android:textColor="@color/black"
-                            android:text="+Envío $" />
+                            android:text="+Envío S./" />
 
                         <TextView
                             android:id="@+id/text_shipping_amount"
@@ -270,7 +262,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_black"
                             android:textColor="@color/black"
-                            android:text="3.0" />
+                            android:text="2.5" />
                     </LinearLayout>
                 </LinearLayout>
 
