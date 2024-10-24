@@ -1,0 +1,87 @@
+package com.example.superadmin;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.superadmin.adapters.ProductHistorialAdapter;
+import com.example.superadmin.model.ProductInCar;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class HistorialActivity extends AppCompatActivity implements ProductHistorialAdapter.OnItemClickListener{
+    ConstraintLayout toolbar;
+    ImageButton btnBack;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_historial);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        toolbar = findViewById(R.id.toolbar_back);
+        btnBack = toolbar.findViewById(R.id.btn_back);
+
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HistorialActivity.this, HomeActivity.class));
+
+                finish();
+            }
+        });
+
+        RecyclerView recyclerView = findViewById(R.id.rv_historial);
+        List<ProductInCar> products = Arrays.asList(
+                new ProductInCar("Alitas BBQ",0, 45.0,R.drawable.comida),
+                new ProductInCar("Ceviche Mixto", 3, 650.0,R.drawable.logo),
+                new ProductInCar("Chicharrón de Calamar", 1, 350.0,R.drawable.logo),
+                new ProductInCar("Arroz con Mariscos", 2, 800.0,R.drawable.logo),
+                new ProductInCar("Ají de Gallina", 4, 550.0,R.drawable.logo),
+                new ProductInCar("Causa Limeña", 1, 450.0,R.drawable.logo),
+                new ProductInCar("Tacos de Pollo Crocante", 1, 650.0,R.drawable.logo),
+                new ProductInCar("Leche de Tigre", 3, 350.0,R.drawable.logo),
+                new ProductInCar("Mazamorra de Calabaza", 6, 800.0,R.drawable.logo),
+                new ProductInCar("Tallarines Rojos", 1, 550.0,R.drawable.logo)
+        );
+        ProductHistorialAdapter adapter = new ProductHistorialAdapter(HistorialActivity.this, products,  this);
+        recyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void onAddClick(int position) {
+
+    }
+
+    @Override
+    public void onMinusClick(int position) {
+
+    }
+
+    @Override
+    public void onRemoveClick(int position) {
+
+    }
+
+    @Override
+    public void onCopyClick(int position) {
+
+    }
+}

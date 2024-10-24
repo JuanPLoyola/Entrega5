@@ -37,7 +37,7 @@ public class UserDesplegableActivity extends AppCompatActivity {
 
 
     public void btnhistorial(MenuItem item){
-        Intent m3intent = new Intent(this, HomePedidosActivity.class);
+        Intent m3intent = new Intent(this, HistorialActivity.class);
         startActivity(m3intent);
     }
 
