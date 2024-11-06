@@ -12,17 +12,17 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.superadmin.R;
-import com.example.superadmin.model.ProductInCar;
+import com.example.superadmin.model.UserProductInCar;
 
 import java.util.List;
 
-public class ProductHistorialAdapter extends RecyclerView.Adapter<ProductHistorialAdapter.ProductHistorialViewHolder> {
+public class UserProductHistorialAdapter extends RecyclerView.Adapter<UserProductHistorialAdapter.ProductHistorialViewHolder> {
 
     private Context context;
-    private List<ProductInCar> productList;
+    private List<UserProductInCar> productList;
     private OnItemClickListener onItemClickListener;
 
-    public ProductHistorialAdapter(Context context, List<ProductInCar> productList, OnItemClickListener onItemClickListener) {
+    public UserProductHistorialAdapter(Context context, List<UserProductInCar> productList, OnItemClickListener onItemClickListener) {
         this.context = context;
         this.productList = productList;
         this.onItemClickListener = onItemClickListener;
@@ -36,8 +36,8 @@ public class ProductHistorialAdapter extends RecyclerView.Adapter<ProductHistori
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductHistorialAdapter.ProductHistorialViewHolder holder, int position) {
-        ProductInCar product = productList.get(position);
+    public void onBindViewHolder(@NonNull UserProductHistorialAdapter.ProductHistorialViewHolder holder, int position) {
+        UserProductInCar product = productList.get(position);
 
         holder.textModel.setText(product.getName());
         holder.imgProduct.setImageResource(product.getImageResId());

@@ -1,4 +1,4 @@
-package com.example.superadmin;
+package com.example.superadmin.user;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,13 +13,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.superadmin.ProfileActivity;
+import com.example.superadmin.R;
 import com.example.superadmin.adapters.ProductAdapter;
 import com.example.superadmin.model.Product;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ProductsActivity extends AppCompatActivity implements ProductAdapter.OnItemClickListener{
+public class UserProductsActivity extends AppCompatActivity implements ProductAdapter.OnItemClickListener{
     ConstraintLayout toolbar;
     ImageButton btnBack;
     ImageButton btnCar;
@@ -43,14 +45,14 @@ public class ProductsActivity extends AppCompatActivity implements ProductAdapte
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProductsActivity.this, ProfileActivity.class));
+                startActivity(new Intent(UserProductsActivity.this, ProfileActivity.class));
             }
         });
 
         btnCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProductsActivity.this, CarActivity.class));
+                startActivity(new Intent(UserProductsActivity.this, UserCarActivity.class));
             }
         });
 
@@ -79,6 +81,6 @@ public class ProductsActivity extends AppCompatActivity implements ProductAdapte
 
     @Override
     public void onItemClick(Product product) {
-        startActivity(new Intent(ProductsActivity.this,ProductDetailActivity.class));
+        startActivity(new Intent(UserProductsActivity.this, UserProductDetailActivity.class));
     }
 }

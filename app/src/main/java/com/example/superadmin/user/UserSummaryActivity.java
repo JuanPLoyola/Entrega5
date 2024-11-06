@@ -1,4 +1,4 @@
-package com.example.superadmin;
+package com.example.superadmin.user;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -17,14 +17,15 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.superadmin.R;
 import com.google.android.material.button.MaterialButton;
-import com.example.superadmin.adapters.AdapterSummary;
-import com.example.superadmin.model.ProductInCar;
+import com.example.superadmin.adapters.UserAdapterSummary;
+import com.example.superadmin.model.UserProductInCar;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class SummaryActivity extends AppCompatActivity {
+public class UserSummaryActivity extends AppCompatActivity {
 
     private static final String CHANNEL_ID = "order_notification_channel";
     private static final int NOTIFICATION_ID = 1001;
@@ -55,7 +56,7 @@ public class SummaryActivity extends AppCompatActivity {
                 scheduleNotifications();
 
                 // Cambiar a la pantalla de inicio
-                startActivity(new Intent(SummaryActivity.this, HomeActivity.class));
+                startActivity(new Intent(UserSummaryActivity.this, UserHomeActivity.class));
 
                 // Terminar la actividad actual
                 finish();
@@ -64,19 +65,19 @@ public class SummaryActivity extends AppCompatActivity {
 
         // Configurar el RecyclerView y cargar productos
         RecyclerView recyclerView = findViewById(R.id.rv_summary_order_client);
-        List<ProductInCar> products = Arrays.asList(
-                new ProductInCar("Alitas BBQ", 2, 45.0, R.drawable.comida),
-                new ProductInCar("Ceviche Mixto", 3, 650.0, R.drawable.logo),
-                new ProductInCar("Chicharrón de Calamar", 1, 350.0, R.drawable.logo),
-                new ProductInCar("Arroz con Mariscos", 2, 800.0, R.drawable.logo),
-                new ProductInCar("Ají de Gallina", 4, 550.0, R.drawable.logo),
-                new ProductInCar("Causa Limeña", 1, 450.0, R.drawable.logo),
-                new ProductInCar("Tacos de Pollo Crocante", 1, 650.0, R.drawable.logo),
-                new ProductInCar("Leche de Tigre", 3, 350.0, R.drawable.logo),
-                new ProductInCar("Mazamorra de Calabaza", 6, 800.0, R.drawable.logo),
-                new ProductInCar("Tallarines Rojos", 1, 550.0, R.drawable.logo)
+        List<UserProductInCar> products = Arrays.asList(
+                new UserProductInCar("Alitas BBQ", 2, 45.0, R.drawable.comida),
+                new UserProductInCar("Ceviche Mixto", 3, 650.0, R.drawable.logo),
+                new UserProductInCar("Chicharrón de Calamar", 1, 350.0, R.drawable.logo),
+                new UserProductInCar("Arroz con Mariscos", 2, 800.0, R.drawable.logo),
+                new UserProductInCar("Ají de Gallina", 4, 550.0, R.drawable.logo),
+                new UserProductInCar("Causa Limeña", 1, 450.0, R.drawable.logo),
+                new UserProductInCar("Tacos de Pollo Crocante", 1, 650.0, R.drawable.logo),
+                new UserProductInCar("Leche de Tigre", 3, 350.0, R.drawable.logo),
+                new UserProductInCar("Mazamorra de Calabaza", 6, 800.0, R.drawable.logo),
+                new UserProductInCar("Tallarines Rojos", 1, 550.0, R.drawable.logo)
         );
-        AdapterSummary adapter = new AdapterSummary(SummaryActivity.this, products);
+        UserAdapterSummary adapter = new UserAdapterSummary(UserSummaryActivity.this, products);
         recyclerView.setAdapter(adapter);
     }
 

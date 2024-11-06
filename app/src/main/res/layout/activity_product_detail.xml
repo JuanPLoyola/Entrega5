@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProductDetailActivity">
+    tools:context=".user.UserProductDetailActivity">
 
     <include
         android:id="@+id/toolbar_detail_product"

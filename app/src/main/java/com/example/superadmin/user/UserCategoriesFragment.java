@@ -1,4 +1,4 @@
-package com.example.superadmin;
+package com.example.superadmin.user;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.superadmin.R;
 import com.example.superadmin.adapters.CategoryAdapter;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class CategoriesFragment extends Fragment implements CategoryAdapter.OnItemClickListener{
+public class UserCategoriesFragment extends Fragment implements CategoryAdapter.OnItemClickListener{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,6 +38,6 @@ public class CategoriesFragment extends Fragment implements CategoryAdapter.OnIt
 
     @Override
     public void onItemClick(String category) {
-        requireActivity().startActivity(new Intent(requireContext(),ProductsActivity.class));
+        requireActivity().startActivity(new Intent(requireContext(), UserProductsActivity.class));
     }
 }

@@ -12,20 +12,18 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.superadmin.R;
-import com.example.superadmin.model.ProductInCar;
+import com.example.superadmin.model.UserProductInCar;
 
 import java.util.List;
 
-public class ProductCarAdapter  extends RecyclerView.Adapter<ProductCarAdapter.ProductCarViewHolder> {
+public class UserAdapterSummary extends RecyclerView.Adapter<UserAdapterSummary.ProductCarViewHolder> {
 
     private Context context;
-    private List<ProductInCar> productList;
-    private OnItemClickListener onItemClickListener;
+    private List<UserProductInCar> productList;
 
-    public ProductCarAdapter(Context context, List<ProductInCar> productList, OnItemClickListener onItemClickListener) {
+    public UserAdapterSummary(Context context, List<UserProductInCar> productList) {
         this.context = context;
         this.productList = productList;
-        this.onItemClickListener = onItemClickListener;
     }
 
     @NonNull
@@ -37,18 +35,10 @@ public class ProductCarAdapter  extends RecyclerView.Adapter<ProductCarAdapter.P
 
     @Override
     public void onBindViewHolder(@NonNull ProductCarViewHolder holder, int position) {
-        ProductInCar product = productList.get(position);
+        UserProductInCar product = productList.get(position);
 
         holder.textModel.setText(product.getName());
-        holder.textNumberProducts.setText(String.valueOf(product.getQuantity()));
         holder.textAmount.setText(String.valueOf(product.getPrice()));
-        holder.imgProduct.setImageResource(product.getImageResId());
-
-
-        holder.btnAddProduct.setOnClickListener(v -> onItemClickListener.onAddClick(position));
-        holder.btnMinusProduct.setOnClickListener(v -> onItemClickListener.onMinusClick(position));
-        holder.btnRemove.setOnClickListener(v -> onItemClickListener.onRemoveClick(position));
-        holder.btnCopy.setOnClickListener(v -> onItemClickListener.onCopyClick(position));
     }
 
     @Override
@@ -70,17 +60,7 @@ public class ProductCarAdapter  extends RecyclerView.Adapter<ProductCarAdapter.P
             textAmount = itemView.findViewById(R.id.text_amount);
             textNumberProducts = itemView.findViewById(R.id.text_number_products);
             imgProduct = itemView.findViewById(R.id.img_product);
-            btnAddProduct = itemView.findViewById(R.id.btn_add_numbers_producst);
-            btnMinusProduct = itemView.findViewById(R.id.btn_minus_numbers_products);
-            btnRemove = itemView.findViewById(R.id.btn_remove);
-            btnCopy = itemView.findViewById(R.id.btn_copy);
         }
     }
 
-    public interface OnItemClickListener {
-        void onAddClick(int position);
-        void onMinusClick(int position);
-        void onRemoveClick(int position);
-        void onCopyClick(int position);
-    }
 }

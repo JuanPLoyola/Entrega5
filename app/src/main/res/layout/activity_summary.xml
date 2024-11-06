@@ -6,7 +6,7 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SummaryActivity">
+    tools:context=".user.UserSummaryActivity">
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar_empty"

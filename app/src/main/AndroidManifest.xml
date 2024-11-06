@@ -72,22 +72,22 @@
 
 
         <activity
-            android:name=".SummaryActivity"
+            android:name=".user.UserSummaryActivity"
             android:exported="false" />
         <activity
-            android:name=".CarActivity"
+            android:name=".user.UserCarActivity"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductDetailActivity"
+            android:name=".user.UserProductDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ProductsActivity"
+            android:name=".user.UserProductsActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".user.UserHomeActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
@@ -109,13 +109,13 @@
             android:name=".HomePedidosActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoriesFragment"
+            android:name=".user.UserCategoriesFragment"
             android:exported="false" />
         <activity
-            android:name=".UserDesplegableActivity"
+            android:name=".user.UserDesplegableActivity"
             android:exported="false" />
         <activity
-            android:name=".HistorialActivity"
+            android:name=".user.UserHistorialActivity"
             android:exported="false" />
 
     </application>

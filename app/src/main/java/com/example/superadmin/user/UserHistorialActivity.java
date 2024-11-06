@@ -1,4 +1,4 @@
-package com.example.superadmin;
+package com.example.superadmin.user;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,13 +13,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.superadmin.adapters.ProductHistorialAdapter;
-import com.example.superadmin.model.ProductInCar;
+import com.example.superadmin.R;
+import com.example.superadmin.adapters.UserProductHistorialAdapter;
+import com.example.superadmin.model.UserProductInCar;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class HistorialActivity extends AppCompatActivity implements ProductHistorialAdapter.OnItemClickListener{
+public class UserHistorialActivity extends AppCompatActivity implements UserProductHistorialAdapter.OnItemClickListener{
     ConstraintLayout toolbar;
     ImageButton btnBack;
 
@@ -41,26 +42,26 @@ public class HistorialActivity extends AppCompatActivity implements ProductHisto
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HistorialActivity.this, HomeActivity.class));
+                startActivity(new Intent(UserHistorialActivity.this, UserHomeActivity.class));
 
                 finish();
             }
         });
 
         RecyclerView recyclerView = findViewById(R.id.rv_historial);
-        List<ProductInCar> products = Arrays.asList(
-                new ProductInCar("Restaurante 1",0, 45.50,R.drawable.comida),
-                new ProductInCar("Restaurante 2", 3, 50.11,R.drawable.logo),
-                new ProductInCar("Restaurante 3", 1, 30.25,R.drawable.logo),
-                new ProductInCar("Restaurante 4", 2, 80.14,R.drawable.logo),
-                new ProductInCar("asd", 4, 55.0,R.drawable.logo),
-                new ProductInCar("ghjhgj", 1, 150.44,R.drawable.logo),
-                new ProductInCar("werwerggg", 1, 200.18,R.drawable.logo),
-                new ProductInCar("Leche de Tigre", 3, 350.54,R.drawable.logo),
-                new ProductInCar("Mazamorra de Calabaza", 6, 100.85,R.drawable.logo),
-                new ProductInCar("Tallarines Rojos", 1, 57.48,R.drawable.logo)
+        List<UserProductInCar> products = Arrays.asList(
+                new UserProductInCar("Restaurante 1",0, 45.50,R.drawable.comida),
+                new UserProductInCar("Restaurante 2", 3, 50.11,R.drawable.logo),
+                new UserProductInCar("Restaurante 3", 1, 30.25,R.drawable.logo),
+                new UserProductInCar("Restaurante 4", 2, 80.14,R.drawable.logo),
+                new UserProductInCar("asd", 4, 55.0,R.drawable.logo),
+                new UserProductInCar("ghjhgj", 1, 150.44,R.drawable.logo),
+                new UserProductInCar("werwerggg", 1, 200.18,R.drawable.logo),
+                new UserProductInCar("Leche de Tigre", 3, 350.54,R.drawable.logo),
+                new UserProductInCar("Mazamorra de Calabaza", 6, 100.85,R.drawable.logo),
+                new UserProductInCar("Tallarines Rojos", 1, 57.48,R.drawable.logo)
         );
-        ProductHistorialAdapter adapter = new ProductHistorialAdapter(HistorialActivity.this, products,  this);
+        UserProductHistorialAdapter adapter = new UserProductHistorialAdapter(UserHistorialActivity.this, products,  this);
         recyclerView.setAdapter(adapter);
 
     }

@@ -1,7 +1,5 @@
 package com.example.superadmin;
 
-import android.app.Activity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import android.widget.TextView;
+
+import com.example.superadmin.user.UserHomeActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                startActivity(new Intent(LoginActivity.this, UserHomeActivity.class));
                 finish();
             }
         });
@@ -59,11 +59,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnBypass.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, HomePedidosActivity.class));
-            }
-        });
+
     }
 }

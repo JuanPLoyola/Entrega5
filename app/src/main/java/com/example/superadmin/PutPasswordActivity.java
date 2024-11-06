@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+
+import com.example.superadmin.user.UserHomeActivity;
+
 public class PutPasswordActivity extends AppCompatActivity {
 
     private AppCompatButton btnRestorePassword;
@@ -19,7 +22,7 @@ public class PutPasswordActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Redirigir a PasswordCodeActivity
-                Intent intent = new Intent(PutPasswordActivity.this, HomeActivity.class);
+                Intent intent = new Intent(PutPasswordActivity.this, UserHomeActivity.class);
                 startActivity(intent);
             }
         });

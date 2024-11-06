@@ -1,4 +1,4 @@
-package com.example.superadmin;
+package com.example.superadmin.user;
 
 
 import android.content.Intent;
@@ -14,15 +14,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.superadmin.adapters.ProductAdapter;
-import com.example.superadmin.adapters.ProductCarAdapter;
-import com.example.superadmin.model.Product;
-import com.example.superadmin.model.ProductInCar;
+import com.example.superadmin.R;
+import com.example.superadmin.adapters.UserProductCarAdapter;
+import com.example.superadmin.model.UserProductInCar;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class CarActivity extends AppCompatActivity implements ProductCarAdapter.OnItemClickListener {
+public class UserCarActivity extends AppCompatActivity implements UserProductCarAdapter.OnItemClickListener {
     ConstraintLayout toolbar;
     ImageButton btnBack;
     ConstraintLayout btnPay;
@@ -44,33 +43,33 @@ public class CarActivity extends AppCompatActivity implements ProductCarAdapter.
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CarActivity.this, SummaryActivity.class));
+                startActivity(new Intent(UserCarActivity.this, UserSummaryActivity.class));
                 finish();
             }
         });
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CarActivity.this, HomeActivity.class));
+                startActivity(new Intent(UserCarActivity.this, UserHomeActivity.class));
 
                 finish();
             }
         });
 
         RecyclerView recyclerView = findViewById(R.id.rv_car);
-        List<ProductInCar> products = Arrays.asList(
-                new ProductInCar("Alitas BBQ",2, 45.0,R.drawable.comida),
-                new ProductInCar("Ceviche Mixto", 3, 650.0,R.drawable.logo),
-                new ProductInCar("Chicharrón de Calamar", 1, 350.0,R.drawable.logo),
-                new ProductInCar("Arroz con Mariscos", 2, 800.0,R.drawable.logo),
-                new ProductInCar("Ají de Gallina", 4, 550.0,R.drawable.logo),
-                new ProductInCar("Causa Limeña", 1, 450.0,R.drawable.logo),
-                new ProductInCar("Tacos de Pollo Crocante", 1, 650.0,R.drawable.logo),
-                new ProductInCar("Leche de Tigre", 3, 350.0,R.drawable.logo),
-                new ProductInCar("Mazamorra de Calabaza", 6, 800.0,R.drawable.logo),
-                new ProductInCar("Tallarines Rojos", 1, 550.0,R.drawable.logo)
+        List<UserProductInCar> products = Arrays.asList(
+                new UserProductInCar("Alitas BBQ",2, 45.0,R.drawable.comida),
+                new UserProductInCar("Ceviche Mixto", 3, 650.0,R.drawable.logo),
+                new UserProductInCar("Chicharrón de Calamar", 1, 350.0,R.drawable.logo),
+                new UserProductInCar("Arroz con Mariscos", 2, 800.0,R.drawable.logo),
+                new UserProductInCar("Ají de Gallina", 4, 550.0,R.drawable.logo),
+                new UserProductInCar("Causa Limeña", 1, 450.0,R.drawable.logo),
+                new UserProductInCar("Tacos de Pollo Crocante", 1, 650.0,R.drawable.logo),
+                new UserProductInCar("Leche de Tigre", 3, 350.0,R.drawable.logo),
+                new UserProductInCar("Mazamorra de Calabaza", 6, 800.0,R.drawable.logo),
+                new UserProductInCar("Tallarines Rojos", 1, 550.0,R.drawable.logo)
         );
-        ProductCarAdapter adapter = new ProductCarAdapter(CarActivity.this, products, this);
+        UserProductCarAdapter adapter = new UserProductCarAdapter(UserCarActivity.this, products, this);
         recyclerView.setAdapter(adapter);
 
     }

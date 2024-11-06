@@ -1,4 +1,4 @@
-package com.example.superadmin;
+package com.example.superadmin.user;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,13 +13,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.superadmin.ProfileActivity;
+import com.example.superadmin.R;
 import com.example.superadmin.adapters.AdapterDots;
 import com.example.superadmin.adapters.AdapterImageSlider;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class ProductDetailActivity extends AppCompatActivity {
+public class UserProductDetailActivity extends AppCompatActivity {
     ConstraintLayout toolbar;
     ImageButton btnBack;
     ImageButton btnCar;
@@ -45,14 +47,14 @@ public class ProductDetailActivity extends AppCompatActivity {
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProductDetailActivity.this, ProfileActivity.class));
+                startActivity(new Intent(UserProductDetailActivity.this, ProfileActivity.class));
             }
         });
 
         btnCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProductDetailActivity.this, CarActivity.class));
+                startActivity(new Intent(UserProductDetailActivity.this, UserCarActivity.class));
             }
         });
 
@@ -66,7 +68,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProductDetailActivity.this, CarActivity.class));
+                startActivity(new Intent(UserProductDetailActivity.this, UserCarActivity.class));
             }
         });
 
@@ -79,8 +81,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         List<String> images = Arrays.asList("","","","");
         List<String> dots = Arrays.asList("","","","");
 
-        AdapterImageSlider adapterImage = new AdapterImageSlider(ProductDetailActivity.this,images);
-        AdapterDots adapterDots = new AdapterDots(ProductDetailActivity.this,dots);
+        AdapterImageSlider adapterImage = new AdapterImageSlider(UserProductDetailActivity.this,images);
+        AdapterDots adapterDots = new AdapterDots(UserProductDetailActivity.this,dots);
 
         recyclerViewImages.setAdapter(adapterImage);
         recyclerViewDots.setAdapter(adapterDots);

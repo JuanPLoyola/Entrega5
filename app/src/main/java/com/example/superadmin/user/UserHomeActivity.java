@@ -1,4 +1,4 @@
-package com.example.superadmin;
+package com.example.superadmin.user;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +13,9 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-public class HomeActivity extends AppCompatActivity {
+import com.example.superadmin.R;
+
+public class UserHomeActivity extends AppCompatActivity {
     ConstraintLayout toolbar;
     ImageButton btnCar;
     ImageButton btnProfile;
@@ -41,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
         btnDesplegable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, UserDesplegableActivity.class));
+                startActivity(new Intent(UserHomeActivity.this, UserDesplegableActivity.class));
             }
         });
 
@@ -58,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         btnCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, CarActivity.class));
+                startActivity(new Intent(UserHomeActivity.this, UserCarActivity.class));
             }
         });
 
@@ -69,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
     private void setFragmentHome() {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.container_principal, new CategoriesFragment(),"principal_fragment")
+                .replace(R.id.container_principal, new UserCategoriesFragment(),"principal_fragment")
                 .commit();
     }
 

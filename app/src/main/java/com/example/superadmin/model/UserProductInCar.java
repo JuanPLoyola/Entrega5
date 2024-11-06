@@ -1,13 +1,13 @@
 package com.example.superadmin.model;
 
-public class ProductInCar {
+public class UserProductInCar {
     private int id;
     private String name;
     private int imageResId;
     private int quantity;
     private double price;
 
-    public ProductInCar( String name, int quantity, double price, int imageResId) {
+    public UserProductInCar(String name, int quantity, double price, int imageResId) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
